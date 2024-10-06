@@ -2,6 +2,7 @@ package com.demojwt.demojwt.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -32,10 +33,11 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable());
 
         // Configurar las rutas permitidas
-        http
-                .authorizeHttpRequests(aut -> aut
-                        .requestMatchers("/authenticate").permitAll()
-                        .anyRequest().authenticated());
+        http.authorizeHttpRequests(aut -> aut
+                .requestMatchers(HttpMethod.GET, "/").permitAll()
+                .requestMatchers(HttpMethod.GET, "/hello-world").permitAll()
+                .requestMatchers(HttpMethod.POST, "/authenticate").permitAll()
+                .anyRequest().authenticated());
 
         // Configurar la sesión para que sea sin estado
         http.sessionManagement(session -> session

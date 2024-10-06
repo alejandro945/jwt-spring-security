@@ -27,7 +27,6 @@ public class StudentService {
 
     public Student update(String firstName, Student studentDto) {
         Student student = studentRepository.findById(firstName).get();
-        student.setName(studentDto.getName());
         student.setLastName(studentDto.getLastName());
         return studentRepository.save(student);
     }
