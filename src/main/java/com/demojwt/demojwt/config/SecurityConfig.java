@@ -1,4 +1,4 @@
-package com.demojwt.demojwt.beans;
+package com.demojwt.demojwt.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

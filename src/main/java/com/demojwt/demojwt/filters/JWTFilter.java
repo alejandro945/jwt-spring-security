@@ -2,7 +2,7 @@ package com.demojwt.demojwt.filters;
 
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.demojwt.demojwt.beans.JWT;
+import com.demojwt.demojwt.config.JWT;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -1,4 +1,4 @@
-package com.demojwt.demojwt.beans;
+package com.demojwt.demojwt.config;
 
 import java.io.Serializable;
 import java.util.Date;
